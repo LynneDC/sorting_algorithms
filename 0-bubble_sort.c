@@ -1,22 +1,41 @@
 #include "sort.h"
+#include <stdbool.h>
 
 /**
- *bubble_sort - sort an array of int in order usin bubble  sort algorithm
- * @array: pointer to array to sort
- * @size: size of the array
- *  
- */
+*bubble_sort - sort an array of int in order usin bubble  sort algorithm
+* @array: pointer to array to sort
+* @size: size of the array
+* 
+*/
+void swap(int *xp, int *yp)
+{
+int temp = *xp;
+*xp = *yp;
+*yp = temp;
+}
+
 void bubble_sort(int *array, size_t size)
 {
-	int i, n;
-	for(i = 0; i < (int)size - 1; i++)
-	{
-		if (array[i] > array[i + 1])
-		{
-			array[i] = array[i + 1];
-			print_array(array, n);
-		}
-	}
-	
+int i, j;
+
+bool swapped;
+for (i = 0; i < (int)size - 1; i++)
+{
+swapped = false;
+for (j = 0; j < (int)size - i - 1; j++)
+{
+if (array[j] > array[j + 1])
+{
+swap(&array[j], &array[j + 1]);
+print_array(array, size);
+swapped = true;
+}
+}
+
+/* If no two elements were swapped by inner loop,*/
+/* then break*/
+if (swapped == false)
+break;
+}
 }
 
