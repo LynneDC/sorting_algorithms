@@ -19,13 +19,13 @@ void selection_sort(int *array, size_t size)
 			{
 				idx = j;
 			}
-		if (idx != i)
+		}
+		if (idx != j)
 		{
 			temp = array[i];
 			array[i] = array[idx];
 			array[idx] = temp;
 			print_array(array, size);
-		}
 		}
 	}
 }
