@@ -2,18 +2,22 @@
 #include <stdbool.h>
 
 /**
-*bubble_sort - sort an array of int in order usin bubble  sort algorithm
-* @array: pointer to array to sort
-* @size: size of the array
-* 
-*/
+ * swap -k swaps integers in ascending arrangement
+ * @xp: ponter
+ * @yp: pointer
+ */
+
 void swap(int *xp, int *yp)
 {
 int temp = *xp;
 *xp = *yp;
 *yp = temp;
 }
-
+/**
+ * bubble_sort - sort an array of int in order usin bubble  sort algorithm
+ *  @array: pointer to array to sort
+ * @size: size of the array
+ */
 void bubble_sort(int *array, size_t size)
 {
 int i, j;
